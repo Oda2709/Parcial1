@@ -45,8 +45,8 @@ public class Carrito implements Juguete {
     }
 
     @Override
-    public void setid(int i) {
-
+    public void setid(int id) {
+        this.id = id;
     }
 
     public static class CarritoBuilder {

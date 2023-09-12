@@ -29,7 +29,6 @@ public class AccionEliminar implements Accion{
         System.out.println("Ingrese id");
         int eliminar = scanner.nextInt();
 
-
         for (Juguete juguete : juguetes) {
             if (juguete.getid() == eliminar) {
                 juguetes.remove(juguete);
@@ -42,7 +41,7 @@ public class AccionEliminar implements Accion{
         for (int i = 0; i < juguetes.size(); i++){
             juguetes.get(i).setid(i);
         }
-        Collections.sort(juguetes, (o1, o2) -> Integer.compare(o1.getid(), o2.getid()));
+        Collections.sort(juguetes, (primero, segundo) -> Integer.compare(primero.getid(), segundo.getid()));
 
         for (Juguete juguete: juguetes) {
             System.out.println(juguete);

@@ -42,7 +42,7 @@ public class Peluche implements Juguete {
 
     @Override
     public void setid(int i) {
-
+        this.id = i;
     }
 
 
