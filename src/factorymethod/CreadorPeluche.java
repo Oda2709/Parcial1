@@ -3,7 +3,8 @@ package src.factorymethod;
 
 import src.fabrica.Juguete;
 import src.fabrica.Peluche;
-import src.singleton.*;
+
+import java.util.List;
 import java.util.Scanner;
 import static src.singleton.Menu.juguetes;
 
@@ -38,5 +39,9 @@ public class CreadorPeluche implements CreadorJuguete{
         }
         return peluche;
     }
+
+
+
+
 }
 

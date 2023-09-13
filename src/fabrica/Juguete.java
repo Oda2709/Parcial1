@@ -2,9 +2,17 @@ package src.fabrica;
 
 public interface Juguete {
 
-    int getid();
+    static void getid(int id) {
+
+    }
+
+     int getid();
+
+
 
     String getcorlor();
 
-    void setid(int i);
+    void setid(int id);
+
+
 }

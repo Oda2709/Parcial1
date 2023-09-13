@@ -1,9 +1,7 @@
 package src.strategy;
 
 import src.fabrica.Juguete;
-import src.singleton.Menu;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Scanner;
 import static src.singleton.Menu.juguetes;
@@ -11,10 +9,10 @@ import static src.singleton.Menu.juguetes;
 public class AccionEliminar implements Accion{
 
     public static Scanner scanner = new Scanner(System.in);
+    private int id;
+
     @Override
     public void aplicar() {
-
-    int opcioneliminar = 0;
 
             System.out.println("""
                           Que juguete desea eliminar?
@@ -53,6 +51,7 @@ public class AccionEliminar implements Accion{
 
     @Override
     public int getOpcion() {
+
         return 3;
     }
 }

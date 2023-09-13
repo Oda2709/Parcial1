@@ -1,11 +1,12 @@
 package src.factorymethod;
 
-import src.fabrica.Carrito;
 import src.fabrica.Juguete;
-import src.fabrica.Peluche;
+
+import java.util.List;
 
 public interface CreadorJuguete {
 
     Juguete crear ();
+
 
 }

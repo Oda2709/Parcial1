@@ -2,11 +2,12 @@ package src.fabrica;
 
 public class Carrito implements Juguete {
 
-    private  String color; // Final por que son inmutables
-    private  String marca;
-    private  int numeroPuertas;
+    private String color; // Final por que son inmutables
+    private String marca;
+    private int numeroPuertas;
 
-    private  int id;
+    private int id;
+
 
 
     public Carrito(String color, String marca, int numeroPuertas, int id) {
@@ -17,6 +18,18 @@ public class Carrito implements Juguete {
     }
 
 
+    public Carrito (Carrito carrito){
+        this.color = carrito.color;
+        this.marca = carrito.marca;
+        this.numeroPuertas = carrito.numeroPuertas;
+        this.id = carrito.id; // verificar creo que no va
+    }
+
+
+    public Carrito clone(){
+        return new Carrito(this);
+    }
+
     @Override
     public String toString() {
         return "Carrito{" +
@@ -26,6 +39,7 @@ public class Carrito implements Juguete {
                 ", id=" + id +
                 '}';
     }
+
     public static CarritoBuilder builder(){
 
         return new CarritoBuilder();
@@ -46,14 +60,18 @@ public class Carrito implements Juguete {
 
     @Override
     public void setid(int id) {
+
         this.id = id;
     }
+
+
 
     public static class CarritoBuilder {
         private String color;
         private String marca;
         private int numeroPuertas;
         private int id;
+
 
         public CarritoBuilder color (String color){
             this.color = color;
