@@ -1,5 +1,7 @@
 package src.fabrica;
 
+import static src.singleton.Menu.juguetes;
+
 public class Carrito implements Juguete {
 
     private String color; // Final por que son inmutables
@@ -7,7 +9,6 @@ public class Carrito implements Juguete {
     private int numeroPuertas;
 
     private int id;
-
 
 
     public Carrito(String color, String marca, int numeroPuertas, int id) {
@@ -18,17 +19,20 @@ public class Carrito implements Juguete {
     }
 
 
-    public Carrito (Carrito carrito){
+    public Carrito (Carrito carrito){  //Prototype
         this.color = carrito.color;
         this.marca = carrito.marca;
         this.numeroPuertas = carrito.numeroPuertas;
-        this.id = carrito.id; // verificar creo que no va
+        this.id =  juguetes.size(); // verificar creo que no va
+
     }
 
 
-    public Carrito clone(){
+    public Carrito clone(){ //Prototype Clone
+
         return new Carrito(this);
     }
+
 
     @Override
     public String toString() {

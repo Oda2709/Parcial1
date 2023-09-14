@@ -7,9 +7,7 @@ import java.util.Scanner;
 
 import static src.singleton.Menu.juguetes;
 
-
 public class AccionClonar implements Accion{
-
 
     public static Scanner scanner = new Scanner(System.in);
 
@@ -22,9 +20,11 @@ public class AccionClonar implements Accion{
         boolean clonacion = false;
         for (Juguete juguete : juguetes) {
             if (juguete.getid() == clonarjuguete) {
+                //nt id = juguete.getid();
                 Carrito cloncarrito =  (Carrito) juguete;
                 juguetes.add(cloncarrito);
-                System.out.println(cloncarrito);
+                System.out.println(cloncarrito );
+                System.out.println(clonarjuguete);
                 clonacion = true;
                 break;
             }
