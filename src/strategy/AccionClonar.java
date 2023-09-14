@@ -3,6 +3,7 @@ package src.strategy;
 import src.fabrica.Carrito;
 import src.fabrica.Juguete;
 
+import java.util.Collections;
 import java.util.Scanner;
 
 import static src.singleton.Menu.juguetes;
@@ -20,18 +21,28 @@ public class AccionClonar implements Accion{
         boolean clonacion = false;
         for (Juguete juguete : juguetes) {
             if (juguete.getid() == clonarjuguete) {
-                //nt id = juguete.getid();
                 Carrito cloncarrito =  (Carrito) juguete;
-                juguetes.add(cloncarrito);
-                System.out.println(cloncarrito );
-                System.out.println(clonarjuguete);
+                Carrito cloncarrito2 = cloncarrito.clone();
+                juguetes.add(cloncarrito2);
+                System.out.println("El clon es: \n" + cloncarrito2);
+
                 clonacion = true;
                 break;
             }
         }
 
+        for (int i = 0; i < juguetes.size(); i++){ //Ciclo
+            juguetes.get(i).setid(i);
+
+        }
+        Collections.sort(juguetes, (primero, segundo) -> Integer.compare(primero.getid(), segundo.getid()));
+
+
 
     }
+
+
+
     @Override
     public int getOpcion() {
 

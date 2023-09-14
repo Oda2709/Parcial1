@@ -36,8 +36,9 @@ public class AccionEliminar implements Accion{
             break;
             }
         }
-        for (int i = 0; i < juguetes.size(); i++){
+        for (int i = 0; i < juguetes.size(); i++){ //
             juguetes.get(i).setid(i);
+
         }
         Collections.sort(juguetes, (primero, segundo) -> Integer.compare(primero.getid(), segundo.getid()));
 

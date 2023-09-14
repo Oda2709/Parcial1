@@ -18,18 +18,14 @@ public class Carrito implements Juguete {
         this.id = id;
     }
 
-
     public Carrito (Carrito carrito){  //Prototype
         this.color = carrito.color;
         this.marca = carrito.marca;
         this.numeroPuertas = carrito.numeroPuertas;
-        this.id =  juguetes.size(); // verificar creo que no va
-
     }
 
 
     public Carrito clone(){ //Prototype Clone
-
         return new Carrito(this);
     }
 
