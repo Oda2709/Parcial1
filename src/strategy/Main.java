@@ -10,8 +10,6 @@ import static src.singleton.Menu.juguetes;
 
 public class Main {
 
-    public static Scanner scanner = new Scanner(System.in);
-
     private  static final int OPCION_SALIR = 5;
 
     public static void main(String[] args) {
@@ -33,16 +31,21 @@ public class Main {
                                      5. Salir
                     ********************************************
                     """);
-            opcion = scanner.nextInt();
-            scanner.nextLine();
-            Accion accion = strategy.get(opcion);
-            if (OPCION_SALIR == opcion) {
-                continue;
-            }
-            if (accion == null) {
-                System.out.println("Esta opción no existe");
-            }else {
-                accion.aplicar();
+            try {
+                Scanner scanner = new Scanner(System.in);
+                opcion = scanner.nextInt();
+                scanner.nextLine();
+                Accion accion = strategy.get(opcion);
+                if (OPCION_SALIR == opcion) {
+                    continue;
+                }
+                if (accion == null) {
+                    System.out.println("Esta opción no existe");
+                } else {
+                    accion.aplicar();
+                }
+            }catch (Exception e) {
+                System.out.printf("ingreso una letra por favor ingrese una de las opciones");
             }
         }while (OPCION_SALIR != opcion);
         System.out.println("Salida exitosa");

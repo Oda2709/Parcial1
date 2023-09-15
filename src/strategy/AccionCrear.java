@@ -13,7 +13,6 @@ public class AccionCrear implements Accion{
     CreadorCarrito creadorCarrito = new CreadorCarrito();
     CreadorPeluche creadorPeluche = new CreadorPeluche();
 
-    public static Scanner scanner = new Scanner(System.in);
 
     @Override
     public void aplicar() {
@@ -24,10 +23,12 @@ public class AccionCrear implements Accion{
                      1 para Peluche  
                      2 para carrito:
                       ************************""");
+        try {
+            Scanner scanner = new Scanner(System.in);
             opcioncrear = scanner.nextInt();
             scanner.nextLine();
             // crear un do while...
-            try {
+
                 if (opcioncrear == 1) {
                     creadorPeluche.crear();
                 }else if (opcioncrear == 2) {

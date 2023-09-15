@@ -8,12 +8,11 @@ import static src.singleton.Menu.juguetes;
 
 public class AccionEliminar implements Accion{
 
-    public static Scanner scanner = new Scanner(System.in);
     private int id;
 
     @Override
     public void aplicar() {
-
+            Scanner scanner = new Scanner(System.in);
             System.out.println("""
                           Que juguete desea eliminar?
                     
@@ -28,7 +27,7 @@ public class AccionEliminar implements Accion{
         int eliminar = scanner.nextInt();
 
         for (Juguete juguete : juguetes) {
-            if (juguete.getid() == eliminar) {
+            if (juguete.getid() == (eliminar - 1)) {
                 juguetes.remove(juguete);
                 //actualizaIDs(juguetes);/// aqui la array list debe organizarse
                 System.out.println("Objeto eliminado con éxito.");

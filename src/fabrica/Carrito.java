@@ -18,15 +18,13 @@ public class Carrito implements Juguete {
         this.id = id;
     }
 
-    public Carrito (Carrito carrito){  //Prototype
+
+
+    public Carrito(Carrito carrito, int id) {
+        this.id = id;
         this.color = carrito.color;
         this.marca = carrito.marca;
         this.numeroPuertas = carrito.numeroPuertas;
-    }
-
-
-    public Carrito clone(){ //Prototype Clone
-        return new Carrito(this);
     }
 
 
@@ -36,7 +34,7 @@ public class Carrito implements Juguete {
                 "color='" + color + '\'' +
                 ", marca='" + marca + '\'' +
                 ", numeroPuertas=" + numeroPuertas +
-                ", id=" + id +
+                ", id=" + (id + 1) +
                 '}';
     }
 
@@ -64,6 +62,10 @@ public class Carrito implements Juguete {
         this.id = id;
     }
 
+    @Override
+    public Juguete clone(int id) {
+        return new Carrito(this,id);
+    }
 
 
     public static class CarritoBuilder {

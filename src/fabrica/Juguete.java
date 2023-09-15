@@ -14,5 +14,7 @@ public interface Juguete {
 
     void setid(int id);
 
+     Juguete clone(int id);
+
 
 }

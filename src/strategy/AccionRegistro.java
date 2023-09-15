@@ -17,6 +17,7 @@ public class AccionRegistro implements Accion{  //mostrar
 
     @Override
     public int getOpcion() {
+
         return 4;
     }
 }

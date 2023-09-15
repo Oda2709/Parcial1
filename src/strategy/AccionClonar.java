@@ -10,25 +10,22 @@ import static src.singleton.Menu.juguetes;
 
 public class AccionClonar implements Accion{
 
-    public static Scanner scanner = new Scanner(System.in);
 
     @Override
     public void aplicar() {
 
+        Scanner scanner = new Scanner(System.in);
         System.out.println("escriba el id del juguete que desea clonar: ");
         int clonarjuguete = scanner.nextInt();
+        Juguete juguete;
 
-        boolean clonacion = false;
         for (Juguete juguete : juguetes) {
-            if (juguete.getid() == clonarjuguete) {
-                Carrito cloncarrito =  (Carrito) juguete;
-                Carrito cloncarrito2 = cloncarrito.clone();
-                juguetes.add(cloncarrito2);
-                System.out.println("El clon es: \n" + cloncarrito2);
 
-                clonacion = true;
-                break;
-            }
+                if (juguete.getid() == (clonarjuguete - 1)) {
+                    System.out.println("El clon es: \n" + juguete);
+
+                }
+
         }
 
         for (int i = 0; i < juguetes.size(); i++){ //Ciclo
@@ -36,7 +33,6 @@ public class AccionClonar implements Accion{
 
         }
         Collections.sort(juguetes, (primero, segundo) -> Integer.compare(primero.getid(), segundo.getid()));
-
 
 
     }

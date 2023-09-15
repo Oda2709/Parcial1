@@ -11,10 +11,12 @@ import static src.singleton.Menu.juguetes;
 
 public  class CreadorCarrito implements CreadorJuguete {
 
-    public static Scanner scanner = new Scanner(System.in);
+
 
     @Override
     public Juguete crear() {
+
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese un color");
         String C = scanner.nextLine();
         System.out.println("Ingrese una Marca");
@@ -22,7 +24,6 @@ public  class CreadorCarrito implements CreadorJuguete {
         System.out.println("Ingrese N° de puertas");
         int  NP= scanner.nextInt();
         int id = juguetes.size();
-        scanner.nextLine();
 
 
          Carrito carrito = new Carrito.CarritoBuilder()
@@ -33,9 +34,7 @@ public  class CreadorCarrito implements CreadorJuguete {
                 .build();
 
 
-
             Menu.juguetes.add(carrito);
-
 
         for (Juguete juguete: juguetes) { // verificar que si se almacene el juguete en la lista
             System.out.println(juguete);
