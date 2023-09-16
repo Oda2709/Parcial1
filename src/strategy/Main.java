@@ -40,12 +40,14 @@ public class Main {
                     continue;
                 }
                 if (accion == null) {
+                    System.out.println("*********************************");
                     System.out.println("Esta opción no existe");
                 } else {
                     accion.aplicar();
                 }
             }catch (Exception ex) {
-                System.out.printf("ingreso una letra por favor ingrese solo numeros \n");
+                System.out.println("*********************************");
+                System.out.printf("**Ingreso una opción no valida**");
                 Menu.getInstance();
             }
 

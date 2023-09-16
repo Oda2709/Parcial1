@@ -11,6 +11,7 @@ public class AccionRegistro implements Accion{  //mostrar
     public List<Juguete> aplicar() {
 
         if (juguetes.isEmpty()) {
+            System.out.println("*********************************************");
             System.out.println("No existen registro de Juguetes creados");
             return juguetes;
         }

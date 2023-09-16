@@ -16,6 +16,7 @@ public class AccionEliminar implements Accion{
         int OpcionEliminar = 0;
 
         if (juguetes.isEmpty()) {
+            System.out.println("*********************************");
             System.out.println("No existen juguetes a eliminar");
             return juguetes;
         }
@@ -57,14 +58,18 @@ public class AccionEliminar implements Accion{
 
 
            } else if (OpcionEliminar == 2) {
+               System.out.println("*********************************");
                 System.out.println("Salida exitosa");
            } else {
+               System.out.println("*********************************");
             System.out.println("Esta opción no existe");
 
            }
 
         }catch(Exception ex){
+            System.out.println("*********************************");
             System.out.printf("**Ingreso una opción no valida**");
+            System.out.println("*********************************");
         }
 
             for (int i = 0; i < juguetes.size(); i++) { //Ciclo organiz

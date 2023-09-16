@@ -16,6 +16,7 @@ public class AccionClonar implements Accion{
         int OpcionClonar = 0;
 
         if (juguetes.isEmpty()) {
+            System.out.println("*********************************");
             System.out.println("No existen juguetes a clonar");
             return juguetes;
         }
@@ -53,13 +54,17 @@ public class AccionClonar implements Accion{
                         System.out.println(ClonaJuguete);
                     }
                 } else if (OpcionClonar == 2) {
-                    System.out.println("Salida exitosa");
+                    System.out.println("*********************************");
+                    System.out.println( "Salida exitosa");
                 } else {
+                    System.out.println("*********************************");
                     System.out.println("Esta opción no existe");
                 }
 
             }catch(Exception ex){
-                System.out.printf("ingreso una letra por favor ingrese solo numeros \n");
+                System.out.println("*********************************");
+                System.out.printf("**Ingreso una opción no valida**");
+                System.out.println("*********************************");
             }
 
             for (int i = 0; i < juguetes.size(); i++){ //Ciclo organiza

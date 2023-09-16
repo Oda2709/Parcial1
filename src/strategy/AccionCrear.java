@@ -36,14 +36,17 @@ public class AccionCrear implements Accion{
                 } else if (opcioncrear == 2) {
                     creadorCarrito.crear();
                 } else if (opcioncrear == 3) {
+                    System.out.println("*********************************");
                     System.out.println("Salida exitosa");
                 } else {
+                    System.out.println("*********************************");
                     System.out.println("Esta opción no existe");
                 }
 
         }catch(Exception ex){
-            System.out.println(" Error -> " + ex.toString());
-            System.out.printf("ingreso una letra por favor ingrese solo numeros \n");
+            System.out.println("*********************************");
+            System.out.printf("**Ingreso una opción no valida**");
+            System.out.println("*********************************");
         }
         } while (opcioncrear != 3); // permite crear todos los juguetes que desee hasya que escoja la opcion 3
 
