@@ -1,7 +1,11 @@
 package src.strategy;
 
+import src.fabrica.Juguete;
+
+import java.util.List;
+
 public interface Accion {
 
-    void aplicar();
+    List<Juguete> aplicar();
     int getOpcion();
 }

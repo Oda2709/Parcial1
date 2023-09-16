@@ -10,7 +10,6 @@ public class Carrito implements Juguete {
 
     private int id;
 
-
     public Carrito(String color, String marca, int numeroPuertas, int id) {
         this.color = color;
         this.marca = marca;
@@ -18,24 +17,26 @@ public class Carrito implements Juguete {
         this.id = id;
     }
 
-
-
-    public Carrito(Carrito carrito, int id) {
-        this.id = id;
+    public Carrito(Carrito carrito) { //Prototype
         this.color = carrito.color;
         this.marca = carrito.marca;
         this.numeroPuertas = carrito.numeroPuertas;
     }
 
+    @Override
+    public Juguete clone() {
+
+        return new Carrito(this);
+    }
 
     @Override
     public String toString() {
-        return "Carrito{" +
-                "color='" + color + '\'' +
-                ", marca='" + marca + '\'' +
-                ", numeroPuertas=" + numeroPuertas +
-                ", id=" + (id + 1) +
-                '}';
+
+        return "Carrito -->  " +
+                " Id = "  + id +
+                " | Color = " + color +
+                " | Marca   = " + marca +
+                " | Numero de Puertas = " + numeroPuertas  ;
     }
 
     public static CarritoBuilder builder(){
@@ -62,10 +63,7 @@ public class Carrito implements Juguete {
         this.id = id;
     }
 
-    @Override
-    public Juguete clone(int id) {
-        return new Carrito(this,id);
-    }
+
 
 
     public static class CarritoBuilder {

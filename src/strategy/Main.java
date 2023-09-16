@@ -44,9 +44,11 @@ public class Main {
                 } else {
                     accion.aplicar();
                 }
-            }catch (Exception e) {
-                System.out.printf("ingreso una letra por favor ingrese una de las opciones");
+            }catch (Exception ex) {
+                System.out.printf("ingreso una letra por favor ingrese solo numeros \n");
+                Menu.getInstance();
             }
+
         }while (OPCION_SALIR != opcion);
         System.out.println("Salida exitosa");
 

@@ -18,22 +18,20 @@ public class Peluche implements Juguete {
         this.materialExterior = peluche.materialExterior;
         this.relleno = peluche.relleno;
         this.color = peluche.color;
-        this.id = peluche.id;
     }
 
-
-    public Peluche clone(){ //Prototype Clone
-        return new Peluche(this);
+    @Override
+    public Juguete clone() {
+        return new  Peluche(this);
     }
 
     @Override
     public String toString() {
-        return "Peluche{" +
-                "materialExterior='" + materialExterior + '\'' +
-                ", relleno='" + relleno + '\'' +
-                ", color='" + color + '\'' +
-                ", id=" + id + 1 +
-                '}';
+        return "Peluche -->  "  +
+                " Id = "  + id +
+                " | Color = " + color +
+                " | Relleno = " + relleno +
+                " | Material Exterior = " + materialExterior;
     }
 
     public static PelucheBuilder builder(){
@@ -59,12 +57,6 @@ public class Peluche implements Juguete {
 
         this.id = id;
     }
-
-
-    /*@Override
-    public Juguete clonar() {
-        return null;
-    }*/
 
 
     public static class PelucheBuilder {

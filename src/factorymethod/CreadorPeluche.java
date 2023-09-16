@@ -21,7 +21,7 @@ public class CreadorPeluche implements CreadorJuguete{
         String ma= scanner.nextLine();
         System.out.println("Ingrese Relleno");
         String  rll= scanner.nextLine();
-        int id = juguetes.size();
+        int id = juguetes.size() + 1;
 
 
         Peluche peluche = new Peluche.PelucheBuilder()

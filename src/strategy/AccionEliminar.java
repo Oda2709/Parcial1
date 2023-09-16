@@ -3,51 +3,86 @@ package src.strategy;
 import src.fabrica.Juguete;
 
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
 import static src.singleton.Menu.juguetes;
 
 public class AccionEliminar implements Accion{
 
-    private int id;
-
+  // Esta acción permite eliminar todos los Id que desee
     @Override
-    public void aplicar() {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("""
-                          Que juguete desea eliminar?
-                    
-                      ************************""");
+    public List<Juguete> aplicar() {
+        int OpcionEliminar = 0;
 
-
-        for (Juguete juguete: juguetes) {
-            System.out.println(juguete);
+        if (juguetes.isEmpty()) {
+            System.out.println("No existen juguetes a eliminar");
+            return juguetes;
         }
-
-        System.out.println("Ingrese id");
-        int eliminar = scanner.nextInt();
 
         for (Juguete juguete : juguetes) {
-            if (juguete.getid() == (eliminar - 1)) {
-                juguetes.remove(juguete);
-                //actualizaIDs(juguetes);/// aqui la array list debe organizarse
-                System.out.println("Objeto eliminado con éxito.");
-
-            break;
-            }
-        }
-        for (int i = 0; i < juguetes.size(); i++){ //
-            juguetes.get(i).setid(i);
-
-        }
-        Collections.sort(juguetes, (primero, segundo) -> Integer.compare(primero.getid(), segundo.getid()));
-
-        for (Juguete juguete: juguetes) {
             System.out.println(juguete);
         }
+        do {
+
+        System.out.println("""
+                  *************************************
+                          1. Ingrese id a eliminar:
+                          2. Salir
+                  *************************************""");
+
+        try{
+            Scanner scanner = new Scanner(System.in);
+            OpcionEliminar = scanner.nextInt();
+            scanner.nextLine();
+
+           if (OpcionEliminar == 1) {
+
+                   System.out.println("Id a Eliminar ");
+                   int IDeliminar = scanner.nextInt();
+                   scanner.nextLine();
+
+                       boolean Eliminar = false;
+                       for (Juguete juguete : juguetes) {
+                           if (juguete.getid() == (IDeliminar)) {
+                               juguetes.remove(juguete);
+                               System.out.println("Id eliminado con éxito.");
+                               Eliminar = true;
+                               break;
+                           }
+                       }
+                       if (!Eliminar){
+                           System.out.println("No existe el Id a eliminar");
+                       }
 
 
+           } else if (OpcionEliminar == 2) {
+                System.out.println("Salida exitosa");
+           } else {
+            System.out.println("Esta opción no existe");
 
-}
+           }
+
+        }catch(Exception ex){
+            System.out.printf("**Ingreso una opción no valida**");
+        }
+
+            for (int i = 0; i < juguetes.size(); i++) { //Ciclo organiz
+                juguetes.get(i).setid(i + 1);
+
+            }
+            Collections.sort(juguetes, new Comparator<Juguete>() {
+                @Override
+                public int compare(Juguete o1, Juguete o2) {
+
+                    return o1.getid() - o2.getid();
+                }
+            });
+
+        }while (OpcionEliminar != 2);
+
+        return null;
+    }
 
     @Override
     public int getOpcion() {
