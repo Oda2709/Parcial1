@@ -2,10 +2,11 @@ package src.strategy;
 
 import src.fabrica.Juguete;
 
-import java.util.List;
+import java.util.Set;
 
 public interface Accion {
 
-    List<Juguete> aplicar();
+    void aplicar();
+
     int getOpcion();
 }

@@ -31,6 +31,7 @@ public class Main {
                                      5. Salir
                     ********************************************
                     """);
+
             try {
                 Scanner scanner = new Scanner(System.in);
                 opcion = scanner.nextInt();

@@ -1,7 +1,5 @@
 package src.fabrica;
 
-import static src.singleton.Menu.juguetes;
-
 public class Carrito implements Juguete {
 
     private String color; // Final por que son inmutables
@@ -33,15 +31,10 @@ public class Carrito implements Juguete {
     public String toString() {
 
         return "Carrito -->  " +
-                " Id = "  + id +
+                " Id = " + id +
                 " | Color = " + color +
                 " | Marca   = " + marca +
-                " | Numero de Puertas = " + numeroPuertas  ;
-    }
-
-    public static CarritoBuilder builder(){
-
-        return new CarritoBuilder();
+                " | Numero de Puertas = " + numeroPuertas;
     }
 
 
@@ -51,19 +44,12 @@ public class Carrito implements Juguete {
         return id;
     }
 
-    @Override
-    public String getcorlor() {
-
-        return color;
-    }
 
     @Override
     public void setid(int id) {
 
         this.id = id;
     }
-
-
 
 
     public static class CarritoBuilder {
@@ -73,29 +59,29 @@ public class Carrito implements Juguete {
         private int id;
 
 
-        public CarritoBuilder color (String color){
+        public CarritoBuilder color(String color) {
             this.color = color;
             return this;
         }
 
-        public CarritoBuilder marca (String marca){
+        public CarritoBuilder marca(String marca) {
             this.marca = marca;
             return this;
         }
 
-        public CarritoBuilder numeroPuertas (int numeroPuertas){
+        public CarritoBuilder numeroPuertas(int numeroPuertas) {
             this.numeroPuertas = numeroPuertas;
             return this;
         }
 
-        public CarritoBuilder id (int id){
+        public CarritoBuilder id(int id) {
             this.id = id;
             return this;
         }
 
-        public Carrito build (){
+        public Carrito build() {
 
-            return new Carrito(color, marca , numeroPuertas, id);
+            return new Carrito(color, marca, numeroPuertas, id);
         }
 
     }

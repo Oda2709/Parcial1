@@ -6,20 +6,21 @@ import java.util.Map;
 
 public class AccionHandler {
 
-    public AccionHandler(){}
+    public AccionHandler() {
+    }
 
-    private static final List <Accion> listaDeAcciones =
+    private static final List<Accion> listaDeAcciones =
             List.of(new AccionCrear(),
                     new AccionClonar(),
                     new AccionEliminar(),
                     new AccionRegistro());
 
-    public static Map<Integer, Accion> getStrategy(){
-        Map <Integer, Accion> strategy = new HashMap<>();
+    public static Map<Integer, Accion> getStrategy() {
+        Map<Integer, Accion> strategy = new HashMap<>();
         for (Accion accion : listaDeAcciones) {
-            strategy.put (accion.getOpcion(), accion);
+            strategy.put(accion.getOpcion(), accion);
         }
-        return  strategy;
+        return strategy;
     }
 
 }

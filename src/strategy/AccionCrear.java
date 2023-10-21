@@ -1,40 +1,41 @@
 package src.strategy;
 
-import src.fabrica.Juguete;
 import src.factorymethod.CreadorCarrito;
 import src.factorymethod.CreadorPeluche;
-
-import java.util.List;
 import java.util.Scanner;
 
-public class AccionCrear implements Accion{
+
+import static src.singleton.Menu.juguetes;
+
+public class AccionCrear implements Accion {
     CreadorCarrito creadorCarrito = new CreadorCarrito();
     CreadorPeluche creadorPeluche = new CreadorPeluche();
 
 
     @Override
-    public List<Juguete> aplicar() {
+    public void aplicar() {
+
         int opcioncrear = 0;
         do {
             System.out.println("""
-                  ************************************
-                       Que juguete desea crear
-           
-                          1. Peluche:
-                          2. Carrito:
-                          3. Salir
-                         
-                  *************************************""");
+                    ************************************
+                         Que juguete desea crear
+                               
+                            1. Peluche:
+                            2. Carrito:
+                            3. Salir
+                           
+                    *************************************""");
 
-        try {
-            Scanner scanner = new Scanner(System.in);
-            opcioncrear = scanner.nextInt();
-            scanner.nextLine();
+            try {
+                Scanner scanner = new Scanner(System.in);
+                opcioncrear = scanner.nextInt();
+                scanner.nextLine();
 
                 if (opcioncrear == 1) {
-                    creadorPeluche.crear();
+                    juguetes.add(creadorPeluche.crear());
                 } else if (opcioncrear == 2) {
-                    creadorCarrito.crear();
+                    juguetes.add(creadorCarrito.crear());
                 } else if (opcioncrear == 3) {
                     System.out.println("*********************************");
                     System.out.println("Salida exitosa");
@@ -43,14 +44,14 @@ public class AccionCrear implements Accion{
                     System.out.println("Esta opción no existe");
                 }
 
-        }catch(Exception ex){
-            System.out.println("*********************************");
-            System.out.printf("**Ingreso una opción no valida**");
-            System.out.println("*********************************");
-        }
+            } catch (Exception ex) {
+                System.out.println("*********************************");
+                System.out.printf("**Ingreso una opción no valida**");
+                System.out.println("*********************************");
+            }
         } while (opcioncrear != 3); // permite crear todos los juguetes que desee hasya que escoja la opcion 3
 
-        return null;
+        //return null;
     }
 
     @Override

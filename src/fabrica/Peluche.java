@@ -14,7 +14,7 @@ public class Peluche implements Juguete {
         this.id = id;
     }
 
-    public Peluche (Peluche peluche){  //Prototype
+    public Peluche(Peluche peluche) {  //Prototype
         this.materialExterior = peluche.materialExterior;
         this.relleno = peluche.relleno;
         this.color = peluche.color;
@@ -22,21 +22,16 @@ public class Peluche implements Juguete {
 
     @Override
     public Juguete clone() {
-        return new  Peluche(this);
+        return new Peluche(this);
     }
 
     @Override
     public String toString() {
-        return "Peluche -->  "  +
-                " Id = "  + id +
+        return "Peluche -->  " +
+                " Id = " + id +
                 " | Color = " + color +
                 " | Relleno = " + relleno +
                 " | Material Exterior = " + materialExterior;
-    }
-
-    public static PelucheBuilder builder(){
-
-        return new PelucheBuilder();
     }
 
 
@@ -46,11 +41,6 @@ public class Peluche implements Juguete {
         return id;
     }
 
-    @Override
-    public String getcorlor() {
-
-        return color;
-    }
 
     @Override
     public void setid(int id) {
@@ -65,27 +55,27 @@ public class Peluche implements Juguete {
         private String color;
         private int id;
 
-        public PelucheBuilder materialExterior (String materialExterior){
+        public PelucheBuilder materialExterior(String materialExterior) {
             this.materialExterior = materialExterior;
             return this;
         }
 
-        public PelucheBuilder relleno (String relleno){
+        public PelucheBuilder relleno(String relleno) {
             this.relleno = relleno;
             return this;
         }
 
-        public PelucheBuilder color (String color){
+        public PelucheBuilder color(String color) {
             this.color = color;
             return this;
         }
 
-        public PelucheBuilder id (int id){
+        public PelucheBuilder id(int id) {
             this.id = id;
             return this;
         }
 
-        public Peluche build (){
+        public Peluche build() {
 
             return new Peluche(materialExterior, relleno, color, id);
         }

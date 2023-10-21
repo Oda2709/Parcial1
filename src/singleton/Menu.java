@@ -1,25 +1,25 @@
 package src.singleton;
 
 import src.fabrica.Juguete;
-import src.strategy.AccionHandler;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Menu {
     private static Menu intance;
-    public static List <Juguete> juguetes = new ArrayList<>();
-    private AccionHandler accionHandler = new AccionHandler();
-    private Menu(){
+    public static Set<Juguete> juguetes = new LinkedHashSet<>();
+
+    private Menu() {
 
     }
-    public static Menu getInstance(){
+
+    public static Menu getInstance() {
         if (intance == null) {
             intance = new Menu();
         }
         return intance;
     }
-    public void intance(String msg){
+
+    public void intance(String msg) {
 
         System.out.println(msg);
     }

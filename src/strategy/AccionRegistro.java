@@ -3,25 +3,26 @@ package src.strategy;
 import src.fabrica.Juguete;
 
 import java.util.List;
+import java.util.Set;
 
 import static src.singleton.Menu.juguetes;
 
-public class AccionRegistro implements Accion{  //mostrar
+public class AccionRegistro implements Accion {  //mostrar
     @Override
-    public List<Juguete> aplicar() {
+    public void aplicar() {
 
         if (juguetes.isEmpty()) {
             System.out.println("*********************************************");
             System.out.println("No existen registro de Juguetes creados");
-            return juguetes;
+            return;
         }
 
         System.out.println(" \n Los juguetes creados son: \n");
-        for (Juguete juguete: juguetes) {
+        for (Juguete juguete : juguetes) {
             System.out.println(juguete);
         }
 
-        return null;
+       // return null;
     }
 
     @Override
