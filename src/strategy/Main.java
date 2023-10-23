@@ -10,11 +10,11 @@ import static src.singleton.Menu.juguetes;
 
 public class Main {
 
-    private  static final int OPCION_SALIR = 5;
+    private static final int OPCION_SALIR = 9;
 
     public static void main(String[] args) {
         Menu menu = Menu.getInstance();
-        Map <Integer, Accion> strategy = AccionHandler.getStrategy();
+        Map<Integer, Accion> strategy = AccionHandler.getStrategy();
 
         int opcion = 0;
         do {
@@ -22,13 +22,17 @@ public class Main {
                     ********************************************
                                            Menú
                                     Fabrica de juguetes
-                        Escoja alguna de las siguientes opciones
+                              Escoja una opcion:
                                      
                                      1. Crear
                                      2. Clonar
                                      3. Eliminar
-                                     4. Ver los juguetes actuales
-                                     5. Salir
+                                     4. Registro (Todos los juguetes creados)
+                                     5. Impresión de peluches o carritos
+                                     6. Impresión del carrito con mayor número de puertas
+                                     7. Mapa de juguetes
+                                     8. Eliminación de juguetes por color
+                                     9. Salir
                     ********************************************
                     """);
 
@@ -46,13 +50,13 @@ public class Main {
                 } else {
                     accion.aplicar();
                 }
-            }catch (Exception ex) {
+            } catch (Exception ex) {
                 System.out.println("*********************************");
-                System.out.printf("**Ingreso una opción no valida**");
+                System.out.println("**Ingreso una opción no valida**");
                 Menu.getInstance();
             }
 
-        }while (OPCION_SALIR != opcion);
+        } while (OPCION_SALIR != opcion);
         System.out.println("Salida exitosa");
 
 

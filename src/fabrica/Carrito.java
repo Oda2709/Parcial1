@@ -37,20 +37,17 @@ public class Carrito implements Juguete {
                 " | Numero de Puertas = " + numeroPuertas;
     }
 
-
     @Override
     public int getid() {
 
         return id;
     }
 
-
     @Override
     public void setid(int id) {
 
         this.id = id;
     }
-
 
     public static class CarritoBuilder {
         private String color;

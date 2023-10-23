@@ -1,6 +1,7 @@
 package src.strategy;
 
 import src.fabrica.Juguete;
+import src.singleton.Menu;
 
 import java.util.*;
 
@@ -11,6 +12,7 @@ public class AccionEliminar implements Accion {
     // Esta acción permite eliminar todos los Id que desee
     @Override
     public void aplicar() {
+     List<Juguete> juguetes = new ArrayList<>(Menu.juguetes);
         int OpcionEliminar = 0;
 
         if (juguetes.isEmpty()) {
@@ -26,7 +28,7 @@ public class AccionEliminar implements Accion {
 
             System.out.println("""
                     *************************************
-                            1. Ingrese id a eliminar:
+                            1. Seleccione id a eliminar:
                             2. Salir
                     *************************************""");
 
@@ -44,7 +46,8 @@ public class AccionEliminar implements Accion {
                     boolean Eliminar = false;
                     for (Juguete juguete : juguetes) {
                         if (juguete.getid() == (IDeliminar)) {
-                            juguetes.remove(juguete);
+                            Menu.juguetes.remove(juguete);
+                            System.out.println(juguete);
                             System.out.println("Id eliminado con éxito.");
                             Eliminar = true;
                             break;
@@ -64,23 +67,18 @@ public class AccionEliminar implements Accion {
 
                 }
 
+
+
+                //Falta organizar
+
+
             } catch (Exception ex) {
                 System.out.println("*********************************");
                 System.out.printf("**Ingreso una opción no valida**");
                 System.out.println("*********************************");
             }
 
-           /* for (int i = 0; i < juguetes.size(); i++) { //Ciclo organiz
-                juguetes.get(i).setid(i + 1);
-
-            }*/
-            /*Collections.sort(juguetes, new Comparator<Juguete>() {
-                @Override
-                public int compare(Juguete o1, Juguete o2) {
-
-                    return o1.getid() - o2.getid();
-                }
-            });*/
+// No roganiza falta
 
         } while (OpcionEliminar != 2);
 

@@ -1,6 +1,7 @@
 package src.strategy;
 
 import src.fabrica.Juguete;
+import src.singleton.Menu;
 
 import java.util.List;
 import java.util.Set;
@@ -18,9 +19,10 @@ public class AccionRegistro implements Accion {  //mostrar
         }
 
         System.out.println(" \n Los juguetes creados son: \n");
-        for (Juguete juguete : juguetes) {
+        for (Juguete juguete : Menu.juguetes) {
             System.out.println(juguete);
         }
+
 
        // return null;
     }

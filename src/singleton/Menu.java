@@ -8,6 +8,7 @@ public class Menu {
     private static Menu intance;
     public static Set<Juguete> juguetes = new LinkedHashSet<>();
 
+
     private Menu() {
 
     }

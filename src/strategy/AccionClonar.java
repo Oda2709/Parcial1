@@ -2,8 +2,11 @@ package src.strategy;
 
 
 import src.fabrica.Juguete;
+import src.singleton.Menu;
 
 import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import static src.singleton.Menu.juguetes;
 
@@ -11,6 +14,8 @@ public class AccionClonar implements Accion {
 
     @Override
     public void aplicar() {
+        List<Juguete> juguetes = new ArrayList<>(Menu.juguetes);
+
         int OpcionClonar = 0;
 
         if (juguetes.isEmpty()) {
@@ -40,17 +45,17 @@ public class AccionClonar implements Accion {
                     int Idclonarjuguete = scanner.nextInt();
 
 
-                    System.out.println("N° juguete a clonar: ");
+                    System.out.println("N° juguetes a clonar: ");
                     int NumClona = scanner.nextInt();
 
-                 /*   System.out.println("Los juguetes clonados son:  ");
+                    System.out.println("Los juguetes clonados son:  ");
                     for (int i = 0; i < NumClona; i++) {
-                       // Juguete ClonaJuguete = juguetes.get(Idclonarjuguete - 1).clone();
-                        Juguete ClonaJuguete = juguetes.
-                        ClonaJuguete.setid(juguetes.size() + 1);
-                        juguetes.add(ClonaJuguete);
+                        Juguete ClonaJuguete = juguetes.get(Idclonarjuguete - 1).clone();
+                        ClonaJuguete.setid(Menu.juguetes.size() + 1);  // se envia el clon al SET
+                        Menu.juguetes.add(ClonaJuguete);
                         System.out.println(ClonaJuguete);
-                    }*/
+                    }
+
                 } else if (OpcionClonar == 2) {
                     System.out.println("*********************************");
                     System.out.println("Salida exitosa");
@@ -61,24 +66,23 @@ public class AccionClonar implements Accion {
 
             } catch (Exception ex) {
                 System.out.println("*********************************");
-                System.out.printf("**Ingreso una opción no valida**");
+                System.out.println("**Ingreso una opción no valida**");
                 System.out.println("*********************************");
             }
 
-           /* for (int i = 0; i < juguetes.size(); i++) { //Ciclo organiza
+           for (int i = 0; i < juguetes.size(); i++) { //Ciclo organiza
                 juguetes.get(i).setid(i + 1);
 
-            }*/
-           /* Collections.sort(juguetes, new Comparator<Juguete>() {
+            }
+           Collections.sort(juguetes, new Comparator<Juguete>() {
                 @Override
                 public int compare(Juguete o1, Juguete o2) {
 
                     return o1.getid() - o2.getid();
                 }
-            });*/
+            });
 
         } while (OpcionClonar != 2);
-
 
     }
 
