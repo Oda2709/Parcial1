@@ -5,6 +5,11 @@ public interface Juguete {
 
     void setid(int id);
 
+    String getColor();
+
+    void setColor(String color);
+
+
     Juguete clone();
 
 

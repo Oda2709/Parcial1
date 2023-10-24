@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 import static src.singleton.Menu.juguetes;
 
-
 public class CreadorCarrito implements CreadorJuguete {
 
     private String CrearColor;

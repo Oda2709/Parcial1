@@ -46,9 +46,10 @@ public class AccionCrear implements Accion {
 
             } catch (Exception ex) {
                 System.out.println("*********************************");
-                System.out.printf("**Ingreso una opción no valida**");
+                System.out.println("**Ingreso una opción no valida**");
                 System.out.println("*********************************");
             }
+
         } while (opcioncrear != 3); // permite crear todos los juguetes que desee hasya que escoja la opcion 3
 
         //return null;

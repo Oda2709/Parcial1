@@ -13,7 +13,12 @@ public class AccionHandler {
             List.of(new AccionCrear(),
                     new AccionClonar(),
                     new AccionEliminar(),
-                    new AccionRegistro());
+                    new AccionRegistro(),
+                    new AccionPrintPoC(),
+                    new AccionPrintCmayorNP(),
+                    new AccionConMapa(),
+                    new AccionEliminarXColor());
+
 
     public static Map<Integer, Accion> getStrategy() {
         Map<Integer, Accion> strategy = new HashMap<>();

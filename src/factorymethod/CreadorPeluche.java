@@ -8,8 +8,6 @@ import java.util.Scanner;
 import static src.singleton.Menu.juguetes;
 
 public class CreadorPeluche implements CreadorJuguete {
-
-
     public static Scanner scanner = new Scanner(System.in);
 
     @Override

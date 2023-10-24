@@ -48,6 +48,16 @@ public class Peluche implements Juguete {
         this.id = id;
     }
 
+    @Override
+    public String getColor() {
+        return null;
+    }
+
+    @Override
+    public void setColor(String color) {
+
+    }
+
 
     public static class PelucheBuilder {
         private String materialExterior;

@@ -12,7 +12,6 @@ public class AccionEliminar implements Accion {
     // Esta acción permite eliminar todos los Id que desee
     @Override
     public void aplicar() {
-     List<Juguete> juguetes = new ArrayList<>(Menu.juguetes);
         int OpcionEliminar = 0;
 
         if (juguetes.isEmpty()) {

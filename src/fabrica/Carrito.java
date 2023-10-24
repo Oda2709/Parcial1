@@ -49,6 +49,19 @@ public class Carrito implements Juguete {
         this.id = id;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getNumeroPuertas() {
+        return numeroPuertas;
+    }
+
+
     public static class CarritoBuilder {
         private String color;
         private String marca;
