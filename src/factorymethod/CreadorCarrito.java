@@ -23,7 +23,7 @@ public class CreadorCarrito implements CreadorJuguete {
         CrearMarca = scanner.nextLine();
         System.out.println("Ingrese N° de puertas");
         NumPuertas = scanner.nextInt();
-        id = juguetes.size() + 1;
+        id = juguetes.size();
 
 
         Carrito carrito = new Carrito.CarritoBuilder()

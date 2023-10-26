@@ -50,7 +50,7 @@ public class Peluche implements Juguete {
 
     @Override
     public String getColor() {
-        return null;
+        return color;
     }
 
     @Override

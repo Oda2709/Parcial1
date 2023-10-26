@@ -1,8 +1,10 @@
 package src.fabrica;
 
+import java.util.stream.IntStream;
+
 public class Carrito implements Juguete {
 
-    private String color; // Final por que son inmutables
+    private String color;
     private String marca;
     private int numeroPuertas;
 
@@ -50,6 +52,7 @@ public class Carrito implements Juguete {
     }
 
     public String getColor() {
+
         return color;
     }
 

@@ -12,6 +12,12 @@ public class AccionPrintCmayorNP implements Accion{
     @Override
     public void aplicar() {
 
+        if (juguetes.isEmpty()) {
+            System.out.println("*********************************");
+            System.out.println("No existen juguetes a imprimir");
+            return;
+        }
+
                 juguetes.stream()
                         .filter( juguete -> juguete instanceof Carrito)
                         .max(Comparator.comparing(juguete -> ((Carrito) juguete).getNumeroPuertas()))
@@ -22,7 +28,7 @@ public class AccionPrintCmayorNP implements Accion{
                                 + juguete); },
                 ()
                         -> { System.out.println(
-                        "No existen juguetes a imprimir"); });
+                        "No existen carritos a imprimir"); });
 
     }
 
