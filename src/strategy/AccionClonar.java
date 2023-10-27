@@ -20,7 +20,7 @@ public class AccionClonar implements Accion {
             System.out.println("No existen juguetes a clonar");
             return;
         }
-        for (Juguete juguete : juguetes) {
+        for (Juguete juguete : Menu.juguetes) {
             System.out.println(juguete);
         }
         do {
@@ -46,7 +46,7 @@ public class AccionClonar implements Accion {
 
                     System.out.println("Los juguetes clonados son:  ");
                     for (int i = 0; i < NumClona; i++) {
-                        Juguete ClonaJuguete = juguetes.get(Idclonarjuguete - 1).clone();
+                        Juguete ClonaJuguete = juguetes.get(Idclonarjuguete - 1 ).clone();
                         ClonaJuguete.setid(Menu.juguetes.size() + 1);  // se envia el clon al SET
                         Menu.juguetes.add(ClonaJuguete);
                         System.out.println(ClonaJuguete);
@@ -60,15 +60,15 @@ public class AccionClonar implements Accion {
                     System.out.println("Esta opción no existe");
                 }
 
-                int i = 0; //Ordena
-                for (Juguete juguete : juguetes) {
-                    juguete.setid(i++);
-                }
 
             } catch (Exception ex) {
                 System.out.println("*********************************");
                 System.out.println("**Ingreso una opción no valida**");
                 System.out.println("*********************************");
+            }
+            int i = 0; //Ordena
+            for (Juguete juguete : Menu.juguetes) {
+                juguete.setid(i++);
             }
 
 

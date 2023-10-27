@@ -20,8 +20,8 @@ public class AccionRegistro implements Accion {  //mostrar
             System.out.println(juguete);
         }
 
-        int i = 0; //Ordena
-        for (Juguete juguete : juguetes) {
+      int i = 0; //Ordena
+        for (Juguete juguete : Menu.juguetes) {
             juguete.setid(i++);
         }
     }

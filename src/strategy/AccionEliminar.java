@@ -20,7 +20,7 @@ public class AccionEliminar implements Accion {
             return;
         }
 
-        for (Juguete juguete : juguetes) {
+        for (Juguete juguete : Menu.juguetes) {
             System.out.println(juguete);
         }
         do {
@@ -66,17 +66,15 @@ public class AccionEliminar implements Accion {
 
                 }
 
-                int i = 0; //Ordena
-                for (Juguete juguete : juguetes) {
-                    juguete.setid(i++);
-                }
-
             } catch (Exception ex) {
                 System.out.println("*********************************");
                 System.out.printf("**Ingreso una opción no valida**");
                 System.out.println("*********************************");
             }
-
+            int i = 0; //Ordena
+            for (Juguete juguete : Menu.juguetes) {
+                juguete.setid(i++);
+            }
 
         } while (OpcionEliminar != 2);
 
