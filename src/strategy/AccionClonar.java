@@ -70,17 +70,10 @@ public class AccionClonar implements Accion {
                 System.out.println("*********************************");
             }
 
-           for (int i = 0; i < juguetes.size(); i++) { //Ciclo organiza
-                juguetes.get(i).setid(i + 1);
-
+            int i=0;
+            for(Juguete juguete: juguetes){
+                juguete.setid(i++);
             }
-           Collections.sort(juguetes, new Comparator<Juguete>() {
-                @Override
-                public int compare(Juguete o1, Juguete o2) {
-
-                    return o1.getid() - o2.getid();
-                }
-            });
 
         } while (OpcionClonar != 2);
 

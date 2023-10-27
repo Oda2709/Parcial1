@@ -66,7 +66,10 @@ public class AccionEliminar implements Accion {
 
                 }
 
-
+                int i=0;
+                for(Juguete juguete: juguetes){
+                    juguete.setid(i++);
+                }
 
                 //Falta organizar
 

@@ -20,7 +20,6 @@ public class AccionEliminarXColor implements Accion {
             return;
         }
 
-
         final int[] i = {1};
         juguetes.stream()
                 .map(Juguete::getColor)
@@ -38,13 +37,20 @@ public class AccionEliminarXColor implements Accion {
                 .collect(Collectors.toSet());
 
         System.out.println(ColorEliminar.size());
-        
+
         for (Juguete juguete : ColorEliminar) {
                 juguetes.remove(juguete);
                 System.out.println("Color " + ColoEli1 + " eliminado con éxito.");
         }
 
+        int j=0;
+        for(Juguete juguete: juguetes){
+            juguete.setid(j++);
+        }
+
     }
+
+
 
     @Override
     public int getOpcion() {
