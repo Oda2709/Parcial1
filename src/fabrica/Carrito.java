@@ -1,7 +1,5 @@
 package src.fabrica;
 
-import java.util.stream.IntStream;
-
 public class Carrito implements Juguete {
 
     private String color;
@@ -56,11 +54,8 @@ public class Carrito implements Juguete {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public int getNumeroPuertas() {
+
         return numeroPuertas;
     }
 
@@ -70,7 +65,6 @@ public class Carrito implements Juguete {
         private String marca;
         private int numeroPuertas;
         private int id;
-
 
         public CarritoBuilder color(String color) {
             this.color = color;

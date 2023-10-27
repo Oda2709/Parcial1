@@ -4,7 +4,5 @@ import src.fabrica.Juguete;
 
 public interface CreadorJuguete {
 
-    Juguete crear ();
-
-
+    Juguete crear();
 }

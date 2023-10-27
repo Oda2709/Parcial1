@@ -34,13 +34,11 @@ public class Peluche implements Juguete {
                 " | Material Exterior = " + materialExterior;
     }
 
-
     @Override
     public int getid() {
 
         return id;
     }
-
 
     @Override
     public void setid(int id) {
@@ -52,12 +50,6 @@ public class Peluche implements Juguete {
     public String getColor() {
         return color;
     }
-
-    @Override
-    public void setColor(String color) {
-
-    }
-
 
     public static class PelucheBuilder {
         private String materialExterior;

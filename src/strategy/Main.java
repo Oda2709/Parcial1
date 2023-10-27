@@ -50,7 +50,7 @@ public class Main {
                 } else {
                     accion.aplicar();
                 }
-           } catch (Exception ex) {
+            } catch (Exception ex) {
                 System.out.println("*********************************");
                 System.out.println("**Ingreso una opción no valida**");
                 Menu.getInstance();

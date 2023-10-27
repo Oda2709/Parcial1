@@ -5,10 +5,7 @@ import src.fabrica.Juguete;
 import src.singleton.Menu;
 
 import java.util.*;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
-import static src.singleton.Menu.juguetes;
 
 public class AccionClonar implements Accion {
 
@@ -41,11 +38,10 @@ public class AccionClonar implements Accion {
 
                 if (OpcionClonar == 1) {
 
-                    System.out.println("escriba el id del juguete que desea clonar: ");
+                    System.out.println("Escriba el id del juguete que desea clonar: ");
                     int Idclonarjuguete = scanner.nextInt();
 
-
-                    System.out.println("N° juguetes a clonar: ");
+                    System.out.println("Escriba el Numero de juguetes a clonar: ");
                     int NumClona = scanner.nextInt();
 
                     System.out.println("Los juguetes clonados son:  ");
@@ -64,16 +60,17 @@ public class AccionClonar implements Accion {
                     System.out.println("Esta opción no existe");
                 }
 
+                int i = 0; //Ordena
+                for (Juguete juguete : juguetes) {
+                    juguete.setid(i++);
+                }
+
             } catch (Exception ex) {
                 System.out.println("*********************************");
                 System.out.println("**Ingreso una opción no valida**");
                 System.out.println("*********************************");
             }
 
-            int i=0;
-            for(Juguete juguete: juguetes){
-                juguete.setid(i++);
-            }
 
         } while (OpcionClonar != 2);
 

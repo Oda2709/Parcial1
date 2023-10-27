@@ -9,7 +9,7 @@ import static src.singleton.Menu.juguetes;
 
 public class AccionEliminar implements Accion {
 
-    // Esta acción permite eliminar todos los Id que desee
+
     @Override
     public void aplicar() {
         int OpcionEliminar = 0;
@@ -66,13 +66,10 @@ public class AccionEliminar implements Accion {
 
                 }
 
-                int i=0;
-                for(Juguete juguete: juguetes){
+                int i = 0; //Ordena
+                for (Juguete juguete : juguetes) {
                     juguete.setid(i++);
                 }
-
-                //Falta organizar
-
 
             } catch (Exception ex) {
                 System.out.println("*********************************");
@@ -80,11 +77,10 @@ public class AccionEliminar implements Accion {
                 System.out.println("*********************************");
             }
 
-// No roganiza falta
 
         } while (OpcionEliminar != 2);
 
-       // return null;
+        // return null;
     }
 
     @Override

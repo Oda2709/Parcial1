@@ -3,9 +3,6 @@ package src.strategy;
 import src.fabrica.Juguete;
 import src.singleton.Menu;
 
-import java.util.List;
-import java.util.Set;
-
 import static src.singleton.Menu.juguetes;
 
 public class AccionRegistro implements Accion {  //mostrar
@@ -23,8 +20,10 @@ public class AccionRegistro implements Accion {  //mostrar
             System.out.println(juguete);
         }
 
-
-       // return null;
+        int i = 0; //Ordena
+        for (Juguete juguete : juguetes) {
+            juguete.setid(i++);
+        }
     }
 
     @Override

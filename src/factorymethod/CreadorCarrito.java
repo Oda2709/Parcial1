@@ -2,6 +2,7 @@ package src.factorymethod;
 
 import src.fabrica.Carrito;
 import src.fabrica.Juguete;
+
 import java.util.Scanner;
 
 import static src.singleton.Menu.juguetes;
@@ -23,8 +24,7 @@ public class CreadorCarrito implements CreadorJuguete {
         CrearMarca = scanner.nextLine();
         System.out.println("Ingrese N° de puertas");
         NumPuertas = scanner.nextInt();
-        id = juguetes.size();
-
+        id = juguetes.size() + 1;
 
         Carrito carrito = new Carrito.CarritoBuilder()
                 .color(CrearColor)

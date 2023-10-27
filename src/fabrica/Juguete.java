@@ -7,9 +7,6 @@ public interface Juguete {
 
     String getColor();
 
-    void setColor(String color);
-
-
     Juguete clone();
 
 

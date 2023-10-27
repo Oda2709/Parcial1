@@ -2,15 +2,14 @@ package src.strategy;
 
 import src.factorymethod.CreadorCarrito;
 import src.factorymethod.CreadorPeluche;
-import java.util.Scanner;
 
+import java.util.Scanner;
 
 import static src.singleton.Menu.juguetes;
 
 public class AccionCrear implements Accion {
     CreadorCarrito creadorCarrito = new CreadorCarrito();
     CreadorPeluche creadorPeluche = new CreadorPeluche();
-
 
     @Override
     public void aplicar() {
@@ -52,7 +51,6 @@ public class AccionCrear implements Accion {
 
         } while (opcioncrear != 3); // permite crear todos los juguetes que desee hasya que escoja la opcion 3
 
-        //return null;
     }
 
     @Override

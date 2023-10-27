@@ -3,6 +3,7 @@ package src.factorymethod;
 
 import src.fabrica.Juguete;
 import src.fabrica.Peluche;
+
 import java.util.Scanner;
 
 import static src.singleton.Menu.juguetes;
@@ -18,7 +19,7 @@ public class CreadorPeluche implements CreadorJuguete {
         String ma = scanner.nextLine();
         System.out.println("Ingrese Relleno");
         String rll = scanner.nextLine();
-        int id = juguetes.size();
+        int id = juguetes.size() + 1;
 
         Peluche peluche = new Peluche.PelucheBuilder()
                 .color(co)

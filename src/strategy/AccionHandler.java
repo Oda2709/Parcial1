@@ -19,7 +19,6 @@ public class AccionHandler {
                     new AccionConMapa(),
                     new AccionEliminarXColor());
 
-
     public static Map<Integer, Accion> getStrategy() {
         Map<Integer, Accion> strategy = new HashMap<>();
         for (Accion accion : listaDeAcciones) {
