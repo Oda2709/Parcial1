@@ -3,16 +3,16 @@ package src.strategy;
 
 import src.fabrica.Juguete;
 import src.singleton.Menu;
+
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static src.singleton.Menu.juguetes;
 
-public class AccionEliminarXColor implements Accion{
+public class AccionEliminarXColor implements Accion {
     @Override
     public void aplicar() {
-        Scanner scanner = new Scanner(System.in);
 
         if (juguetes.isEmpty()) {
             System.out.println("*********************************");
@@ -20,47 +20,30 @@ public class AccionEliminarXColor implements Accion{
             return;
         }
 
-        Map<Integer, String> MapEli = new HashMap<>(); //Mapeo de los colores
+
+        final int[] i = {1};
         juguetes.stream()
-                .forEach(color -> MapEli.put(color.getid(), color.getColor()));
-
-        MapEli.forEach((color, id) -> System.out.println("Key: " + color +  " " +  "--->"  + "  "+ "Value: " + id));
-
-       juguetes.stream() //filtra por color
-                .filter(color -> color.getColor() !=ColoEli1)
-                 .collect(Collectors.toList());
-        System.out.println(ColoEli1);
+                .map(Juguete::getColor)
+                .distinct()
+                .forEach(color -> System.out.println("Key: " + i[0]++ + " " + "--->" + "  " + "Value: " + color));
 
 
-       boolean Eliminar = false;
-
-        Set<String> col = new HashSet<>(); // https://www.techiedelight.com/es/convert-map-list-java-8//
-        Menu.juguetes.stream()
-                .forEach(color -> col.add(color.getColor()));
-
-       List<Juguete> juguetes1 = new ArrayList<>(juguetes);
-        System.out.println(juguetes1);
-
-
-
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Color a Eliminar ");
+        // Integer ColorElimi = scanner.nextInt();
         String ColoEli1 = scanner.nextLine();
-      // Integer ColorElimi = scanner.nextInt();
-       //String ColoEli1 = MapEli.get(ColorElimi);
-        scanner.nextLine();
 
+        Set<Juguete> ColorEliminar = juguetes.stream() //filtra por color
+                .filter(juguete -> juguete.getColor().equals(ColoEli1))
+                .collect(Collectors.toSet());
 
-        for (Juguete juguete : juguetes1) {
-            if (juguete.getColor() == ColoEli1){
-                Menu.juguetes.removeIf(color -> col.add(color.getColor()));
-                System.out.println("Color" + MapEli + "eliminado con éxito.");
-                Eliminar = true;
-                break;
-            }
+        System.out.println(ColorEliminar.size());
+        
+        for (Juguete juguete : ColorEliminar) {
+                juguetes.remove(juguete);
+                System.out.println("Color " + ColoEli1 + " eliminado con éxito.");
         }
-        if (!Eliminar) {
-            System.out.println("No existe el color a eliminar");
-        }
+
     }
 
     @Override
