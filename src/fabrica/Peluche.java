@@ -28,7 +28,7 @@ public class Peluche implements Juguete {
     @Override
     public String toString() {
         return "Peluche -->  " +
-                " Id = " + id +
+                " Id = " + (id + 1) +
                 " | Color = " + color +
                 " | Relleno = " + relleno +
                 " | Material Exterior = " + materialExterior;

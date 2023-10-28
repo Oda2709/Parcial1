@@ -15,15 +15,16 @@ public class AccionRegistro implements Accion {  //mostrar
             return;
         }
 
+        int i = 0; //Ordena
+        for (Juguete juguete : Menu.juguetes) {
+            juguete.setid(i++);
+        }
+
         System.out.println(" \n Los juguetes creados son: \n");
         for (Juguete juguete : Menu.juguetes) {
             System.out.println(juguete);
         }
 
-      int i = 0; //Ordena
-        for (Juguete juguete : Menu.juguetes) {
-            juguete.setid(i++);
-        }
     }
 
     @Override

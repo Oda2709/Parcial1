@@ -46,8 +46,8 @@ public class AccionClonar implements Accion {
 
                     System.out.println("Los juguetes clonados son:  ");
                     for (int i = 0; i < NumClona; i++) {
-                        Juguete ClonaJuguete = juguetes.get(Idclonarjuguete - 1 ).clone();
-                        ClonaJuguete.setid(Menu.juguetes.size() + 1);  // se envia el clon al SET
+                        Juguete ClonaJuguete = juguetes.get(Idclonarjuguete - 1).clone();
+                        ClonaJuguete.setid(Menu.juguetes.size());
                         Menu.juguetes.add(ClonaJuguete);
                         System.out.println(ClonaJuguete);
                     }

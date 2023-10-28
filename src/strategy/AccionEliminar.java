@@ -44,7 +44,7 @@ public class AccionEliminar implements Accion {
 
                     boolean Eliminar = false;
                     for (Juguete juguete : juguetes) {
-                        if (juguete.getid() == (IDeliminar)) {
+                        if (juguete.getid() == (IDeliminar - 1)) {
                             Menu.juguetes.remove(juguete);
                             System.out.println(juguete);
                             System.out.println("Id eliminado con éxito.");

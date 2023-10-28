@@ -36,6 +36,8 @@ public class AccionPrintCmayorNP implements Accion {
 
     @Override
     public int getOpcion() {
+
+
         return 6;
     }
 }

@@ -32,22 +32,22 @@ public class AccionEliminarXColor implements Accion {
                     .filter(juguete -> juguete.getColor().equals(ColoEli1))
                     .collect(Collectors.toSet());
 
-            System.out.println(ColorEliminar.size());
-
+            boolean Eliminarc = false;
             for (Juguete juguete : ColorEliminar) {
-                juguetes.remove(juguete);
-                System.out.println("Color " + ColoEli1 + " eliminado con éxito.");
+                if (ColoEli1.equals(juguete.getColor())) {
+                    juguetes.remove(juguete);
+                    System.out.println("Color " + ColoEli1 + " eliminado con éxito.");
+                    Eliminarc = true;
+                }
+            }
+            if (!Eliminarc) {
+                System.out.println("No existe el color a eliminar");
             }
 
         } catch (Exception ex) {
             System.out.println("*********************************");
             System.out.printf("**Ingreso una opción no valida**");
             System.out.println("*********************************");
-
-            int j = 0; //Ordena
-            for (Juguete juguete : juguetes) {
-                juguete.setid(j++);
-            }
         }
 
 

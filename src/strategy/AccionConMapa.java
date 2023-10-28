@@ -16,7 +16,7 @@ public class AccionConMapa implements Accion {
         }
         juguetes.stream()
                 .collect(Collectors.toMap(Juguete::getid, juguete -> juguete))
-                .forEach((id, juguetes) -> System.out.println("Key: " + id + " " + "--->" + "  " + "Value: " + juguetes));
+                .forEach((id, juguetes) -> System.out.println("Key: " + (id + 1) + " " + "--->" + "  " + "Value: " + juguetes));
     }
 
     @Override

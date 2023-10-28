@@ -31,7 +31,7 @@ public class Carrito implements Juguete {
     public String toString() {
 
         return "Carrito -->  " +
-                " Id = " + id +
+                " Id = " + (id + 1) +
                 " | Color = " + color +
                 " | Marca   = " + marca +
                 " | Numero de Puertas = " + numeroPuertas;
